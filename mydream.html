@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mydream</title>
+</head>
+
+<body>
+    <script>
+        //Looping through an array of objects.
+        var cars = [{
+                make: "maserati",
+                model: "quattroporte",
+                year: 2020,
+                color: "black"
+            },
+            {
+                make: "ford",
+                model: "mustang",
+                year: 2020,
+                color: "black"
+            }
+        ]
+        for (i = 0; i < cars.length; i++) {
+            if (cars[i].year < 2030) {
+                document.write(cars[i].make +
+                    "," + cars[i].model)
+            }
+        }
+    </script>
+</body>
+
+</html>
