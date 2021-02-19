@@ -1,12 +1,29 @@
-function newRegiste() {
-    var newP = document.createElement("p"); //새 p 요소 만들기
-    var userName = document.querySelector("#userName"); //텍스트 필드 내용 가져오기
-    var newText = document.createTextNode(userName, value); // 새 텍스트 노드 만들기
-    newP.appendChild(newText); //newText 노드를 newP 노드의 자식 노드로 연결
+var userId = document.querySelector("#user-id");
+var pww1 = document.querySelector("#user-pw1");
+var pw2 = document.querySelector("#user-pwd2");
 
+userId.onchage = checkId;
+pw1.onchange = checkPw;
+pw2.onchange = comparePw;
+function checkId() {
+    if (userId.value.length < 4 || userId.value.length > 15) {
+        alert("4~15 자리의 영문과 숫자를 사용하세요.");
+        userId.select();
+    }
+}
 
+function checkPw() {
+    if (pw1.value.length < 8) {
+        alert("비밀번호는 8자리 이상이어야 합니다.");
+        pw1.value = "";
+        pw1.focus();
+    }
+}
 
-    var nameList = document.querySelector("#nameList"); //#nameList가져옴
-    nameList.appendChild(newP); //newP 노드를 nameList 노드의 자식 노드로 연결
-    userName.value = ""; //다음 이름을 입력할 수 있도록 텍스트 필드 비우기
+function comparePw() {
+    if (pw1.value != pw2.value) {
+        alert("암호가 다릅니다. 다시 입력하세요.");
+        pw2.value = "";
+        pw2.focus();
+    }
 }
