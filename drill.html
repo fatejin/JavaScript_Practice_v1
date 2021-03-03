@@ -5,15 +5,23 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Learn Coding</title>
+     <title>Learn Coding - ES6 Block variable</title>
  </head>
 
  <body>
      <script>
-         function greet(name, lastName) {
-             console.log('Hello' + name + '' + lastName)
+         add("abc", "123");
+
+         function add(a, b) {
+             var local = a + b;
+             var local = a + b;
+             if (b != null) {
+                 let block = b + a;
+                 console.log(block); // block var declared
+
+             }
+             console.log(local); // local var declared
          }
-         greet('Jin', 'is_good');
      </script>
  </body>
 
